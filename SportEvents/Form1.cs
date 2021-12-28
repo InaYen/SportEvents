@@ -1,3 +1,4 @@
+using SportEvents.Repositories;
 using System.Data.SqlClient;
 
 namespace SportEvents
@@ -11,9 +12,8 @@ namespace SportEvents
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            SqlConnection connection = new(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\minhy\source\repos\SportEvents\SportEvents\SportEventsDB.mdf;Integrated Security=True");
-            connection.Open();
-            connection.Close();
+            EventsRepository repository = new EventsRepository();
+            dataGridViewEvents.DataSource = repository.GetEvents();
         }
     }
 }
