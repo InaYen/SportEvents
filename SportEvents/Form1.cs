@@ -137,7 +137,7 @@ namespace SportEvents
                 textBoxName.Text = "";
                 dateTimePickerStart.Value = DateTime.Today;
                 dateTimePickerEnd.Value = DateTime.Today;
-                pictureBox.Image = null;
+                pictureBox.Image = Properties.Resources.select;
                 comboBoxOrganization.SelectedIndex = 0;
             }
             else
