@@ -31,9 +31,18 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("First Item", 0);
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.dataGridViewEvents = new System.Windows.Forms.DataGridView();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.comboBoxOrganization = new System.Windows.Forms.ComboBox();
+            this.dateTimePickerEnd = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerStart = new System.Windows.Forms.DateTimePicker();
+            this.pictureBox = new System.Windows.Forms.PictureBox();
+            this.buttonAdd = new System.Windows.Forms.Button();
+            this.buttonDedlete = new System.Windows.Forms.Button();
+            this.textBoxSerach = new System.Windows.Forms.TextBox();
+            this.labelSearch = new System.Windows.Forms.Label();
+            this.textBoxName = new System.Windows.Forms.TextBox();
+            this.labelEventOrganization = new System.Windows.Forms.Label();
             this.labelEventEndDate = new System.Windows.Forms.Label();
             this.labelEventStartDate = new System.Windows.Forms.Label();
             this.buttonSave = new System.Windows.Forms.Button();
@@ -42,51 +51,33 @@
             this.imageList = new System.Windows.Forms.ImageList(this.components);
             this.labelEventName = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.labelEventOrganization = new System.Windows.Forms.Label();
-            this.textBoxName = new System.Windows.Forms.TextBox();
-            this.textBoxStartDate = new System.Windows.Forms.TextBox();
-            this.textBoxEndDate = new System.Windows.Forms.TextBox();
-            this.textBoxOrganization = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.labelSearch = new System.Windows.Forms.Label();
-            this.buttonDedlete = new System.Windows.Forms.Button();
-            this.buttonAdd = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEvents)).BeginInit();
-            this.tabControl1.SuspendLayout();
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.tabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridViewEvents
+            // tabControl
             // 
-            this.dataGridViewEvents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewEvents.Location = new System.Drawing.Point(587, 44);
-            this.dataGridViewEvents.Margin = new System.Windows.Forms.Padding(2);
-            this.dataGridViewEvents.Name = "dataGridViewEvents";
-            this.dataGridViewEvents.RowHeadersWidth = 62;
-            this.dataGridViewEvents.RowTemplate.Height = 33;
-            this.dataGridViewEvents.Size = new System.Drawing.Size(238, 132);
-            this.dataGridViewEvents.TabIndex = 1;
-            // 
-            // tabControl1
-            // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(906, 423);
-            this.tabControl1.TabIndex = 2;
+            this.tabControl.Controls.Add(this.tabPage1);
+            this.tabControl.Controls.Add(this.tabPage2);
+            this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl.Location = new System.Drawing.Point(0, 0);
+            this.tabControl.Name = "tabControl";
+            this.tabControl.SelectedIndex = 0;
+            this.tabControl.Size = new System.Drawing.Size(906, 423);
+            this.tabControl.TabIndex = 2;
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.comboBoxOrganization);
+            this.tabPage1.Controls.Add(this.dateTimePickerEnd);
+            this.tabPage1.Controls.Add(this.dateTimePickerStart);
+            this.tabPage1.Controls.Add(this.pictureBox);
             this.tabPage1.Controls.Add(this.buttonAdd);
             this.tabPage1.Controls.Add(this.buttonDedlete);
-            this.tabPage1.Controls.Add(this.textBox1);
+            this.tabPage1.Controls.Add(this.textBoxSerach);
             this.tabPage1.Controls.Add(this.labelSearch);
-            this.tabPage1.Controls.Add(this.textBoxOrganization);
-            this.tabPage1.Controls.Add(this.textBoxEndDate);
-            this.tabPage1.Controls.Add(this.textBoxStartDate);
             this.tabPage1.Controls.Add(this.textBoxName);
             this.tabPage1.Controls.Add(this.labelEventOrganization);
             this.tabPage1.Controls.Add(this.labelEventEndDate);
@@ -95,7 +86,6 @@
             this.tabPage1.Controls.Add(this.buttonEdit);
             this.tabPage1.Controls.Add(this.listViewEvents);
             this.tabPage1.Controls.Add(this.labelEventName);
-            this.tabPage1.Controls.Add(this.dataGridViewEvents);
             this.tabPage1.Location = new System.Drawing.Point(4, 24);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -103,6 +93,94 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "List of Events";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // comboBoxOrganization
+            // 
+            this.comboBoxOrganization.FormattingEnabled = true;
+            this.comboBoxOrganization.Items.AddRange(new object[] {
+            "Football",
+            "Basketball"});
+            this.comboBoxOrganization.Location = new System.Drawing.Point(709, 306);
+            this.comboBoxOrganization.Name = "comboBoxOrganization";
+            this.comboBoxOrganization.Size = new System.Drawing.Size(178, 23);
+            this.comboBoxOrganization.TabIndex = 24;
+            // 
+            // dateTimePickerEnd
+            // 
+            this.dateTimePickerEnd.Location = new System.Drawing.Point(687, 270);
+            this.dateTimePickerEnd.Name = "dateTimePickerEnd";
+            this.dateTimePickerEnd.Size = new System.Drawing.Size(200, 23);
+            this.dateTimePickerEnd.TabIndex = 23;
+            // 
+            // dateTimePickerStart
+            // 
+            this.dateTimePickerStart.Location = new System.Drawing.Point(687, 230);
+            this.dateTimePickerStart.Name = "dateTimePickerStart";
+            this.dateTimePickerStart.Size = new System.Drawing.Size(200, 23);
+            this.dateTimePickerStart.TabIndex = 22;
+            // 
+            // pictureBox
+            // 
+            this.pictureBox.Location = new System.Drawing.Point(599, 44);
+            this.pictureBox.Name = "pictureBox";
+            this.pictureBox.Size = new System.Drawing.Size(224, 132);
+            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox.TabIndex = 21;
+            this.pictureBox.TabStop = false;
+            this.pictureBox.Click += new System.EventHandler(this.PictureBox_Click);
+            // 
+            // buttonAdd
+            // 
+            this.buttonAdd.Location = new System.Drawing.Point(829, 44);
+            this.buttonAdd.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonAdd.Name = "buttonAdd";
+            this.buttonAdd.Size = new System.Drawing.Size(53, 20);
+            this.buttonAdd.TabIndex = 20;
+            this.buttonAdd.Text = "Add";
+            this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.Click += new System.EventHandler(this.ButtonAdd_Click);
+            // 
+            // buttonDedlete
+            // 
+            this.buttonDedlete.Location = new System.Drawing.Point(828, 156);
+            this.buttonDedlete.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonDedlete.Name = "buttonDedlete";
+            this.buttonDedlete.Size = new System.Drawing.Size(53, 20);
+            this.buttonDedlete.TabIndex = 19;
+            this.buttonDedlete.Text = "Delete";
+            this.buttonDedlete.UseVisualStyleBackColor = true;
+            // 
+            // textBoxSerach
+            // 
+            this.textBoxSerach.Location = new System.Drawing.Point(647, 10);
+            this.textBoxSerach.Name = "textBoxSerach";
+            this.textBoxSerach.Size = new System.Drawing.Size(240, 23);
+            this.textBoxSerach.TabIndex = 18;
+            // 
+            // labelSearch
+            // 
+            this.labelSearch.AutoSize = true;
+            this.labelSearch.Location = new System.Drawing.Point(599, 13);
+            this.labelSearch.Name = "labelSearch";
+            this.labelSearch.Size = new System.Drawing.Size(42, 15);
+            this.labelSearch.TabIndex = 17;
+            this.labelSearch.Text = "Search";
+            // 
+            // textBoxName
+            // 
+            this.textBoxName.Location = new System.Drawing.Point(709, 199);
+            this.textBoxName.Name = "textBoxName";
+            this.textBoxName.Size = new System.Drawing.Size(172, 23);
+            this.textBoxName.TabIndex = 13;
+            // 
+            // labelEventOrganization
+            // 
+            this.labelEventOrganization.AutoSize = true;
+            this.labelEventOrganization.Location = new System.Drawing.Point(599, 309);
+            this.labelEventOrganization.Name = "labelEventOrganization";
+            this.labelEventOrganization.Size = new System.Drawing.Size(75, 15);
+            this.labelEventOrganization.TabIndex = 12;
+            this.labelEventOrganization.Text = "Organization";
             // 
             // labelEventEndDate
             // 
@@ -181,99 +259,30 @@
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // labelEventOrganization
+            // openFileDialog
             // 
-            this.labelEventOrganization.AutoSize = true;
-            this.labelEventOrganization.Location = new System.Drawing.Point(599, 309);
-            this.labelEventOrganization.Name = "labelEventOrganization";
-            this.labelEventOrganization.Size = new System.Drawing.Size(75, 15);
-            this.labelEventOrganization.TabIndex = 12;
-            this.labelEventOrganization.Text = "Organization";
-            // 
-            // textBoxName
-            // 
-            this.textBoxName.Location = new System.Drawing.Point(709, 199);
-            this.textBoxName.Name = "textBoxName";
-            this.textBoxName.Size = new System.Drawing.Size(172, 23);
-            this.textBoxName.TabIndex = 13;
-            // 
-            // textBoxStartDate
-            // 
-            this.textBoxStartDate.Location = new System.Drawing.Point(709, 236);
-            this.textBoxStartDate.Name = "textBoxStartDate";
-            this.textBoxStartDate.Size = new System.Drawing.Size(172, 23);
-            this.textBoxStartDate.TabIndex = 14;
-            // 
-            // textBoxEndDate
-            // 
-            this.textBoxEndDate.Location = new System.Drawing.Point(709, 273);
-            this.textBoxEndDate.Name = "textBoxEndDate";
-            this.textBoxEndDate.Size = new System.Drawing.Size(172, 23);
-            this.textBoxEndDate.TabIndex = 15;
-            // 
-            // textBoxOrganization
-            // 
-            this.textBoxOrganization.Location = new System.Drawing.Point(709, 306);
-            this.textBoxOrganization.Name = "textBoxOrganization";
-            this.textBoxOrganization.Size = new System.Drawing.Size(172, 23);
-            this.textBoxOrganization.TabIndex = 16;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(647, 10);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(240, 23);
-            this.textBox1.TabIndex = 18;
-            // 
-            // labelSearch
-            // 
-            this.labelSearch.AutoSize = true;
-            this.labelSearch.Location = new System.Drawing.Point(599, 13);
-            this.labelSearch.Name = "labelSearch";
-            this.labelSearch.Size = new System.Drawing.Size(42, 15);
-            this.labelSearch.TabIndex = 17;
-            this.labelSearch.Text = "Search";
-            // 
-            // buttonDedlete
-            // 
-            this.buttonDedlete.Location = new System.Drawing.Point(828, 156);
-            this.buttonDedlete.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonDedlete.Name = "buttonDedlete";
-            this.buttonDedlete.Size = new System.Drawing.Size(53, 20);
-            this.buttonDedlete.TabIndex = 19;
-            this.buttonDedlete.Text = "Delete";
-            this.buttonDedlete.UseVisualStyleBackColor = true;
-            // 
-            // buttonAdd
-            // 
-            this.buttonAdd.Location = new System.Drawing.Point(829, 44);
-            this.buttonAdd.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(53, 20);
-            this.buttonAdd.TabIndex = 20;
-            this.buttonAdd.Text = "Add";
-            this.buttonAdd.UseVisualStyleBackColor = true;
+            this.openFileDialog.FileName = "Select the image";
+            this.openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(906, 423);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.tabControl);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEvents)).EndInit();
-            this.tabControl1.ResumeLayout(false);
+            this.tabControl.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private DataGridView dataGridViewEvents;
-        private TabControl tabControl1;
+        private TabControl tabControl;
         private TabPage tabPage1;
         private Label labelEventName;
         private TabPage tabPage2;
@@ -284,13 +293,15 @@
         private Button buttonSave;
         private Button buttonEdit;
         private Label labelEventOrganization;
-        private TextBox textBoxOrganization;
-        private TextBox textBoxEndDate;
-        private TextBox textBoxStartDate;
         private TextBox textBoxName;
         private Button buttonDedlete;
-        private TextBox textBox1;
+        private TextBox textBoxSerach;
         private Label labelSearch;
         private Button buttonAdd;
+        private PictureBox pictureBox;
+        private DateTimePicker dateTimePickerStart;
+        private DateTimePicker dateTimePickerEnd;
+        private ComboBox comboBoxOrganization;
+        private OpenFileDialog openFileDialog;
     }
 }

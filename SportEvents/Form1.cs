@@ -16,12 +16,24 @@ namespace SportEvents
 
         private void LoadEvents()
         {
+            events.Clear();
             listViewEvents.Items.Clear();
 
             events.AddRange(EventsRepository.GetEvents());
+            FillImageListFromEvents();
             ListViewItem[] items = TransfromEventsToListViewItems(events);
 
             listViewEvents.Items.AddRange(items);
+        }
+
+        private void FillImageListFromEvents()
+        {
+            imageList.Images.Clear();
+
+            foreach (var eventModel in events)
+            {
+                imageList.Images.Add(eventModel.Id.ToString(), eventModel.Image);
+            }
         }
 
         private ListViewItem[] TransfromEventsToListViewItems(List<EventModel> events)
@@ -30,15 +42,31 @@ namespace SportEvents
 
             for (int i = 0; i < events.Count; i++)
             {
-                items[i] = new ListViewItem(events[i].Name, 0);
+                items[i] = new ListViewItem(events[i].Name, events[i].Id.ToString());
             }
 
             return items;
         }
-
-        private void Button1_Click(object sender, EventArgs e)
+               
+        private void ButtonAdd_Click(object sender, EventArgs e)
         {
-            dataGridViewEvents.DataSource = EventsRepository.GetEvents();
+            EventModel eventModel = new(
+                textBoxName.Text, 
+                dateTimePickerStart.Value, 
+                dateTimePickerEnd.Value,
+                pictureBox.Image,
+                OrganizarionsRepository.GetOrganizationIdByName(comboBoxOrganization.Text));
+
+            EventsRepository.Insert(eventModel);
+            LoadEvents();
+        }
+
+        private void PictureBox_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                pictureBox.Image = Image.FromFile(openFileDialog.FileName);
+            } 
         }
     }
 }

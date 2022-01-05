@@ -49,5 +49,22 @@ namespace SportEvents.Repositories
 
             command.ExecuteNonQuery();
         }
+
+        internal static void Insert(EventModel eventModel)
+        {
+            SqlCommand insertCommand = new(
+                "INSERT INTO Events ( [Name], StartDate, EndDate, [Image], OrganizationID ) " +
+                "VALUES ( @name, @startDate, @endDate, @image, @organizationId );",
+                DataConnection.Open());
+
+            insertCommand.Parameters.AddWithValue("@name", eventModel.Name);
+            insertCommand.Parameters.AddWithValue("@startDate", eventModel.StartDate);
+            insertCommand.Parameters.AddWithValue("@endDate", eventModel.EndDate);
+            insertCommand.Parameters.AddWithValue("@image", ImageHelper.GetBinaryData(eventModel.Image));
+            insertCommand.Parameters.AddWithValue("@organizationId", eventModel.OrganizationId);
+
+            insertCommand.ExecuteNonQuery();
+            DataConnection.Close();
+        }
     }
 }

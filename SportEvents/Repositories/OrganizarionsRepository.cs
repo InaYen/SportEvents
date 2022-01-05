@@ -12,6 +12,20 @@ namespace SportEvents.Repositories
             DataConnection.Close(); 
         }
 
+        internal static int GetOrganizationIdByName(string name)
+        {
+            int organizationId = 0;
+            SqlCommand command = new($"SELECT Id FROM Organizations WHERE [Name] = '{name}';", DataConnection.Open());
+
+            var reader = command.ExecuteReader();   
+            reader.Read();
+
+            organizationId = reader.GetInt32(0);
+            DataConnection.Close();
+
+            return organizationId;
+        }
+
         //var reader = command.ExecuteReader();
         //var data = reader.Read();
 
