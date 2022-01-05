@@ -68,7 +68,7 @@
             // 
             this.tabControl.Controls.Add(this.tabPage1);
             this.tabControl.Controls.Add(this.tabPage2);
-            this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl.Dock = System.Windows.Forms.DockStyle.Right;
             this.tabControl.Location = new System.Drawing.Point(0, 0);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
@@ -77,6 +77,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.BackColor = System.Drawing.Color.Linen;
             this.tabPage1.Controls.Add(this.tableLayoutPanel);
             this.tabPage1.Location = new System.Drawing.Point(4, 24);
             this.tabPage1.Name = "tabPage1";
@@ -84,10 +85,10 @@
             this.tabPage1.Size = new System.Drawing.Size(1136, 460);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "List of Events";
-            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel
             // 
+            this.tableLayoutPanel.BackColor = System.Drawing.Color.Linen;
             this.tableLayoutPanel.ColumnCount = 2;
             this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
             this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
@@ -104,6 +105,7 @@
             // 
             // panelEventInfromation
             // 
+            this.panelEventInfromation.BackColor = System.Drawing.Color.Linen;
             this.panelEventInfromation.Controls.Add(this.pictureBox);
             this.panelEventInfromation.Controls.Add(this.labelEventName);
             this.panelEventInfromation.Controls.Add(this.comboBoxOrganization);
@@ -161,6 +163,7 @@
             // buttonEdit
             // 
             this.buttonEdit.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.buttonEdit.BackColor = System.Drawing.Color.Transparent;
             this.buttonEdit.BackgroundImage = global::SportEvents.Properties.Resources.Edit;
             this.buttonEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buttonEdit.Location = new System.Drawing.Point(131, 241);
@@ -168,7 +171,7 @@
             this.buttonEdit.Name = "buttonEdit";
             this.buttonEdit.Size = new System.Drawing.Size(70, 70);
             this.buttonEdit.TabIndex = 5;
-            this.buttonEdit.UseVisualStyleBackColor = true;
+            this.buttonEdit.UseVisualStyleBackColor = false;
             // 
             // dateTimePickerEnd
             // 
@@ -222,6 +225,7 @@
             // buttonAdd
             // 
             this.buttonAdd.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.buttonAdd.BackColor = System.Drawing.Color.Transparent;
             this.buttonAdd.BackgroundImage = global::SportEvents.Properties.Resources.Add;
             this.buttonAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buttonAdd.Location = new System.Drawing.Point(17, 241);
@@ -229,7 +233,7 @@
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(70, 70);
             this.buttonAdd.TabIndex = 20;
-            this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.UseVisualStyleBackColor = false;
             this.buttonAdd.Click += new System.EventHandler(this.ButtonAdd_Click);
             // 
             // textBoxName
@@ -243,6 +247,7 @@
             // buttonDedlete
             // 
             this.buttonDedlete.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.buttonDedlete.BackColor = System.Drawing.Color.Transparent;
             this.buttonDedlete.BackgroundImage = global::SportEvents.Properties.Resources.Remove;
             this.buttonDedlete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buttonDedlete.Location = new System.Drawing.Point(245, 241);
@@ -250,12 +255,12 @@
             this.buttonDedlete.Name = "buttonDedlete";
             this.buttonDedlete.Size = new System.Drawing.Size(70, 70);
             this.buttonDedlete.TabIndex = 19;
-            this.buttonDedlete.UseVisualStyleBackColor = true;
+            this.buttonDedlete.UseVisualStyleBackColor = false;
             this.buttonDedlete.Click += new System.EventHandler(this.ButtonDedlete_Click);
             // 
             // listViewEvents
             // 
-            this.listViewEvents.BackColor = System.Drawing.SystemColors.Control;
+            this.listViewEvents.BackColor = System.Drawing.Color.Azure;
             this.listViewEvents.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listViewEvents.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
             listViewItem1});
@@ -345,6 +350,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Linen;
             this.ClientSize = new System.Drawing.Size(1144, 488);
             this.Controls.Add(this.tabControl);
             this.Margin = new System.Windows.Forms.Padding(2);
