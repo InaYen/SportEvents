@@ -70,19 +70,21 @@
             this.tabControl.Controls.Add(this.tabPage2);
             this.tabControl.Dock = System.Windows.Forms.DockStyle.Right;
             this.tabControl.Location = new System.Drawing.Point(0, 0);
+            this.tabControl.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(1144, 488);
+            this.tabControl.Size = new System.Drawing.Size(1634, 813);
             this.tabControl.TabIndex = 2;
             // 
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.Linen;
             this.tabPage1.Controls.Add(this.tableLayoutPanel);
-            this.tabPage1.Location = new System.Drawing.Point(4, 24);
+            this.tabPage1.Location = new System.Drawing.Point(4, 34);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1136, 460);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tabPage1.Size = new System.Drawing.Size(1626, 775);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "List of Events";
             // 
@@ -95,12 +97,13 @@
             this.tableLayoutPanel.Controls.Add(this.panelEventInfromation, 1, 0);
             this.tableLayoutPanel.Controls.Add(this.listViewEvents, 0, 0);
             this.tableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel.Location = new System.Drawing.Point(4, 5);
+            this.tableLayoutPanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tableLayoutPanel.Name = "tableLayoutPanel";
             this.tableLayoutPanel.RowCount = 1;
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel.Size = new System.Drawing.Size(1130, 454);
+            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 757F));
+            this.tableLayoutPanel.Size = new System.Drawing.Size(1618, 765);
             this.tableLayoutPanel.TabIndex = 3;
             // 
             // panelEventInfromation
@@ -119,9 +122,10 @@
             this.panelEventInfromation.Controls.Add(this.textBoxName);
             this.panelEventInfromation.Controls.Add(this.buttonDedlete);
             this.panelEventInfromation.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelEventInfromation.Location = new System.Drawing.Point(794, 3);
+            this.panelEventInfromation.Location = new System.Drawing.Point(1136, 5);
+            this.panelEventInfromation.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panelEventInfromation.Name = "panelEventInfromation";
-            this.panelEventInfromation.Size = new System.Drawing.Size(333, 448);
+            this.panelEventInfromation.Size = new System.Drawing.Size(478, 755);
             this.panelEventInfromation.TabIndex = 25;
             // 
             // pictureBox
@@ -129,8 +133,9 @@
             this.pictureBox.Dock = System.Windows.Forms.DockStyle.Top;
             this.pictureBox.Image = global::SportEvents.Properties.Resources.select;
             this.pictureBox.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(333, 241);
+            this.pictureBox.Size = new System.Drawing.Size(478, 402);
             this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox.TabIndex = 21;
             this.pictureBox.TabStop = false;
@@ -141,9 +146,10 @@
             this.labelEventName.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelEventName.AutoSize = true;
             this.labelEventName.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelEventName.Location = new System.Drawing.Point(20, 321);
+            this.labelEventName.Location = new System.Drawing.Point(29, 539);
+            this.labelEventName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelEventName.Name = "labelEventName";
-            this.labelEventName.Size = new System.Drawing.Size(49, 20);
+            this.labelEventName.Size = new System.Drawing.Size(75, 31);
             this.labelEventName.TabIndex = 2;
             this.labelEventName.Text = "Name";
             // 
@@ -155,9 +161,10 @@
             this.comboBoxOrganization.Items.AddRange(new object[] {
             "Football",
             "Basketball"});
-            this.comboBoxOrganization.Location = new System.Drawing.Point(140, 417);
+            this.comboBoxOrganization.Location = new System.Drawing.Point(202, 699);
+            this.comboBoxOrganization.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.comboBoxOrganization.Name = "comboBoxOrganization";
-            this.comboBoxOrganization.Size = new System.Drawing.Size(178, 23);
+            this.comboBoxOrganization.Size = new System.Drawing.Size(253, 33);
             this.comboBoxOrganization.TabIndex = 24;
             // 
             // buttonEdit
@@ -166,19 +173,20 @@
             this.buttonEdit.BackColor = System.Drawing.Color.Transparent;
             this.buttonEdit.BackgroundImage = global::SportEvents.Properties.Resources.Edit;
             this.buttonEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonEdit.Location = new System.Drawing.Point(131, 241);
-            this.buttonEdit.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonEdit.Location = new System.Drawing.Point(188, 402);
             this.buttonEdit.Name = "buttonEdit";
-            this.buttonEdit.Size = new System.Drawing.Size(70, 70);
+            this.buttonEdit.Size = new System.Drawing.Size(100, 117);
             this.buttonEdit.TabIndex = 5;
             this.buttonEdit.UseVisualStyleBackColor = false;
+            this.buttonEdit.Click += new System.EventHandler(this.buttonEdit_Click);
             // 
             // dateTimePickerEnd
             // 
             this.dateTimePickerEnd.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.dateTimePickerEnd.Location = new System.Drawing.Point(118, 384);
+            this.dateTimePickerEnd.Location = new System.Drawing.Point(171, 644);
+            this.dateTimePickerEnd.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dateTimePickerEnd.Name = "dateTimePickerEnd";
-            this.dateTimePickerEnd.Size = new System.Drawing.Size(200, 23);
+            this.dateTimePickerEnd.Size = new System.Drawing.Size(284, 31);
             this.dateTimePickerEnd.TabIndex = 23;
             // 
             // labelEventStartDate
@@ -186,18 +194,20 @@
             this.labelEventStartDate.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelEventStartDate.AutoSize = true;
             this.labelEventStartDate.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelEventStartDate.Location = new System.Drawing.Point(20, 354);
+            this.labelEventStartDate.Location = new System.Drawing.Point(29, 594);
+            this.labelEventStartDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelEventStartDate.Name = "labelEventStartDate";
-            this.labelEventStartDate.Size = new System.Drawing.Size(76, 20);
+            this.labelEventStartDate.Size = new System.Drawing.Size(115, 31);
             this.labelEventStartDate.TabIndex = 8;
             this.labelEventStartDate.Text = "Start Date";
             // 
             // dateTimePickerStart
             // 
             this.dateTimePickerStart.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.dateTimePickerStart.Location = new System.Drawing.Point(118, 351);
+            this.dateTimePickerStart.Location = new System.Drawing.Point(171, 589);
+            this.dateTimePickerStart.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dateTimePickerStart.Name = "dateTimePickerStart";
-            this.dateTimePickerStart.Size = new System.Drawing.Size(200, 23);
+            this.dateTimePickerStart.Size = new System.Drawing.Size(284, 31);
             this.dateTimePickerStart.TabIndex = 22;
             // 
             // labelEventEndDate
@@ -205,9 +215,10 @@
             this.labelEventEndDate.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelEventEndDate.AutoSize = true;
             this.labelEventEndDate.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelEventEndDate.Location = new System.Drawing.Point(20, 387);
+            this.labelEventEndDate.Location = new System.Drawing.Point(29, 649);
+            this.labelEventEndDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelEventEndDate.Name = "labelEventEndDate";
-            this.labelEventEndDate.Size = new System.Drawing.Size(70, 20);
+            this.labelEventEndDate.Size = new System.Drawing.Size(107, 31);
             this.labelEventEndDate.TabIndex = 10;
             this.labelEventEndDate.Text = "End Date";
             // 
@@ -216,9 +227,10 @@
             this.labelEventOrganization.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelEventOrganization.AutoSize = true;
             this.labelEventOrganization.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelEventOrganization.Location = new System.Drawing.Point(20, 420);
+            this.labelEventOrganization.Location = new System.Drawing.Point(29, 704);
+            this.labelEventOrganization.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelEventOrganization.Name = "labelEventOrganization";
-            this.labelEventOrganization.Size = new System.Drawing.Size(95, 20);
+            this.labelEventOrganization.Size = new System.Drawing.Size(146, 31);
             this.labelEventOrganization.TabIndex = 12;
             this.labelEventOrganization.Text = "Organization";
             // 
@@ -228,10 +240,9 @@
             this.buttonAdd.BackColor = System.Drawing.Color.Transparent;
             this.buttonAdd.BackgroundImage = global::SportEvents.Properties.Resources.Add;
             this.buttonAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonAdd.Location = new System.Drawing.Point(17, 241);
-            this.buttonAdd.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonAdd.Location = new System.Drawing.Point(25, 402);
             this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(70, 70);
+            this.buttonAdd.Size = new System.Drawing.Size(100, 117);
             this.buttonAdd.TabIndex = 20;
             this.buttonAdd.UseVisualStyleBackColor = false;
             this.buttonAdd.Click += new System.EventHandler(this.ButtonAdd_Click);
@@ -239,9 +250,10 @@
             // textBoxName
             // 
             this.textBoxName.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.textBoxName.Location = new System.Drawing.Point(146, 318);
+            this.textBoxName.Location = new System.Drawing.Point(211, 534);
+            this.textBoxName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxName.Name = "textBoxName";
-            this.textBoxName.Size = new System.Drawing.Size(172, 23);
+            this.textBoxName.Size = new System.Drawing.Size(244, 31);
             this.textBoxName.TabIndex = 13;
             // 
             // buttonDedlete
@@ -250,10 +262,9 @@
             this.buttonDedlete.BackColor = System.Drawing.Color.Transparent;
             this.buttonDedlete.BackgroundImage = global::SportEvents.Properties.Resources.Remove;
             this.buttonDedlete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonDedlete.Location = new System.Drawing.Point(245, 241);
-            this.buttonDedlete.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonDedlete.Location = new System.Drawing.Point(351, 402);
             this.buttonDedlete.Name = "buttonDedlete";
-            this.buttonDedlete.Size = new System.Drawing.Size(70, 70);
+            this.buttonDedlete.Size = new System.Drawing.Size(100, 117);
             this.buttonDedlete.TabIndex = 19;
             this.buttonDedlete.UseVisualStyleBackColor = false;
             this.buttonDedlete.Click += new System.EventHandler(this.ButtonDedlete_Click);
@@ -265,9 +276,10 @@
             this.listViewEvents.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
             listViewItem1});
             this.listViewEvents.LargeImageList = this.imageList;
-            this.listViewEvents.Location = new System.Drawing.Point(3, 3);
+            this.listViewEvents.Location = new System.Drawing.Point(4, 5);
+            this.listViewEvents.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.listViewEvents.Name = "listViewEvents";
-            this.listViewEvents.Size = new System.Drawing.Size(785, 448);
+            this.listViewEvents.Size = new System.Drawing.Size(1124, 755);
             this.listViewEvents.TabIndex = 4;
             this.listViewEvents.UseCompatibleStateImageBehavior = false;
             this.listViewEvents.SelectedIndexChanged += new System.EventHandler(this.ListViewEvents_SelectedIndexChanged);
@@ -287,35 +299,39 @@
             this.tabPage2.Controls.Add(this.buttonDeleteOrganization);
             this.tabPage2.Controls.Add(this.buttonEditOrganization);
             this.tabPage2.Controls.Add(this.buttonAddOrganization);
-            this.tabPage2.Location = new System.Drawing.Point(4, 24);
+            this.tabPage2.Location = new System.Drawing.Point(4, 34);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1136, 460);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tabPage2.Size = new System.Drawing.Size(1626, 775);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Organiaztions";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // textBoxOrganization
             // 
-            this.textBoxOrganization.Location = new System.Drawing.Point(140, 38);
+            this.textBoxOrganization.Location = new System.Drawing.Point(200, 63);
+            this.textBoxOrganization.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxOrganization.Name = "textBoxOrganization";
-            this.textBoxOrganization.Size = new System.Drawing.Size(189, 23);
+            this.textBoxOrganization.Size = new System.Drawing.Size(268, 31);
             this.textBoxOrganization.TabIndex = 4;
             // 
             // listBoxOrganizations
             // 
             this.listBoxOrganizations.FormattingEnabled = true;
-            this.listBoxOrganizations.ItemHeight = 15;
-            this.listBoxOrganizations.Location = new System.Drawing.Point(143, 67);
+            this.listBoxOrganizations.ItemHeight = 25;
+            this.listBoxOrganizations.Location = new System.Drawing.Point(204, 112);
+            this.listBoxOrganizations.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.listBoxOrganizations.Name = "listBoxOrganizations";
-            this.listBoxOrganizations.Size = new System.Drawing.Size(186, 199);
+            this.listBoxOrganizations.Size = new System.Drawing.Size(264, 329);
             this.listBoxOrganizations.TabIndex = 3;
             // 
             // buttonDeleteOrganization
             // 
-            this.buttonDeleteOrganization.Location = new System.Drawing.Point(31, 156);
+            this.buttonDeleteOrganization.Location = new System.Drawing.Point(44, 260);
+            this.buttonDeleteOrganization.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonDeleteOrganization.Name = "buttonDeleteOrganization";
-            this.buttonDeleteOrganization.Size = new System.Drawing.Size(75, 23);
+            this.buttonDeleteOrganization.Size = new System.Drawing.Size(107, 38);
             this.buttonDeleteOrganization.TabIndex = 2;
             this.buttonDeleteOrganization.Text = "Delete";
             this.buttonDeleteOrganization.UseVisualStyleBackColor = true;
@@ -323,9 +339,10 @@
             // 
             // buttonEditOrganization
             // 
-            this.buttonEditOrganization.Location = new System.Drawing.Point(31, 111);
+            this.buttonEditOrganization.Location = new System.Drawing.Point(44, 185);
+            this.buttonEditOrganization.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonEditOrganization.Name = "buttonEditOrganization";
-            this.buttonEditOrganization.Size = new System.Drawing.Size(75, 23);
+            this.buttonEditOrganization.Size = new System.Drawing.Size(107, 38);
             this.buttonEditOrganization.TabIndex = 1;
             this.buttonEditOrganization.Text = "Edit";
             this.buttonEditOrganization.UseVisualStyleBackColor = true;
@@ -333,9 +350,10 @@
             // 
             // buttonAddOrganization
             // 
-            this.buttonAddOrganization.Location = new System.Drawing.Point(31, 67);
+            this.buttonAddOrganization.Location = new System.Drawing.Point(44, 112);
+            this.buttonAddOrganization.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonAddOrganization.Name = "buttonAddOrganization";
-            this.buttonAddOrganization.Size = new System.Drawing.Size(75, 23);
+            this.buttonAddOrganization.Size = new System.Drawing.Size(107, 38);
             this.buttonAddOrganization.TabIndex = 0;
             this.buttonAddOrganization.Text = "Add";
             this.buttonAddOrganization.UseVisualStyleBackColor = true;
@@ -348,13 +366,12 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Linen;
-            this.ClientSize = new System.Drawing.Size(1144, 488);
+            this.ClientSize = new System.Drawing.Size(1634, 813);
             this.Controls.Add(this.tabControl);
-            this.Margin = new System.Windows.Forms.Padding(2);
-            this.MinimumSize = new System.Drawing.Size(1160, 527);
+            this.MinimumSize = new System.Drawing.Size(1648, 841);
             this.Name = "Form1";
             this.Text = "Sport Events";
             this.tabControl.ResumeLayout(false);

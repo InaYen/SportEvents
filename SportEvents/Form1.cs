@@ -158,5 +158,21 @@ namespace SportEvents
             LoadEvents();
             FillEventInformation(null);
         }
+
+        private void buttonEdit_Click(object sender, EventArgs e)
+        {
+            EventModel eventModel = new(
+                textBoxName.Text,
+                dateTimePickerStart.Value,
+                dateTimePickerEnd.Value,
+                pictureBox.Image,
+                OrganizarionsRepository.GetOrganizationIdByName(comboBoxOrganization.Text));
+
+            eventModel.Id = Convert.ToInt32(listViewEvents.SelectedItems[0].ImageKey);
+
+            EventsRepository.Update(eventModel);
+            LoadEvents();
+            FillEventInformation(null);
+        }
     }
 }

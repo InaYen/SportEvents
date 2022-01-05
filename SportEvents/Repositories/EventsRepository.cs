@@ -42,14 +42,24 @@ namespace SportEvents.Repositories
 
         public static void Update(EventModel model)
         {
-            SqlCommand command = new(
-                $"UPDATE Events SET [Name] = '{model.Name}', " +
-                $"StartDate = {model.StartDate}, " +
-                $"EndDate = {model.EndDate}, " +
-                $"OrganizationID = {model.OrganizationId} " +
-                $"WHERE Id = {model.Id};", DataConnection.Open());
+            SqlCommand updateCommand = new(
+               "UPDATE Events SET " +
+               "[Name] = @name, " +
+               "StartDate = @startDate, " +
+               "EndDate = @endDate, " +
+               "[Image] = @image, " +
+               "OrganizationID = @organizationId " +
+               "WHERE Id = @id;",
+               DataConnection.Open());
 
-            command.ExecuteNonQuery();
+            updateCommand.Parameters.AddWithValue("@id", model.Id);
+            updateCommand.Parameters.AddWithValue("@name", model.Name);
+            updateCommand.Parameters.AddWithValue("@startDate", model.StartDate);
+            updateCommand.Parameters.AddWithValue("@endDate", model.EndDate);
+            updateCommand.Parameters.AddWithValue("@image", ImageHelper.GetBinaryData(model.Image));
+            updateCommand.Parameters.AddWithValue("@organizationId", model.OrganizationId);
+
+            updateCommand.ExecuteNonQuery();
             DataConnection.Close();
         }
 
