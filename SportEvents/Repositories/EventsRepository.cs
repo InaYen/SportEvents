@@ -34,8 +34,10 @@ namespace SportEvents.Repositories
 
         public static void DeleteEvent(int id)
         {
-            SqlCommand command = new($"DELETE * FROM Events WHERE Id = {id};", DataConnection.Open());
+            SqlCommand command = new($"DELETE FROM Events WHERE Id = {id};", DataConnection.Open());
             command.ExecuteNonQuery();
+
+            DataConnection.Close();
         }
 
         public static void Update(EventModel model)
@@ -48,6 +50,7 @@ namespace SportEvents.Repositories
                 $"WHERE Id = {model.Id};", DataConnection.Open());
 
             command.ExecuteNonQuery();
+            DataConnection.Close();
         }
 
         internal static void Insert(EventModel eventModel)
@@ -65,6 +68,26 @@ namespace SportEvents.Repositories
 
             insertCommand.ExecuteNonQuery();
             DataConnection.Close();
+        }
+
+        internal static EventModel GetEventById(int selectedEventId)
+        {
+            SqlCommand command = new($"SELECT * FROM Events WHERE Id = {selectedEventId};", DataConnection.Open());
+            var reader = command.ExecuteReader();
+            reader.Read();
+
+            EventModel model = new()
+            {
+                Id = reader.GetInt32(0),
+                Name = reader.GetString(1),
+                StartDate = reader.GetDateTime(2),
+                EndDate = reader.GetDateTime(3),
+                Image = ImageHelper.GetImage(reader.GetStream(4)),
+                OrganizationId = reader.GetInt32(5),
+            };
+
+            DataConnection.Close();
+            return model;
         }
     }
 }

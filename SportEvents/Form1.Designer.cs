@@ -39,22 +39,25 @@
             this.pictureBox = new System.Windows.Forms.PictureBox();
             this.buttonAdd = new System.Windows.Forms.Button();
             this.buttonDedlete = new System.Windows.Forms.Button();
-            this.textBoxSerach = new System.Windows.Forms.TextBox();
-            this.labelSearch = new System.Windows.Forms.Label();
             this.textBoxName = new System.Windows.Forms.TextBox();
             this.labelEventOrganization = new System.Windows.Forms.Label();
             this.labelEventEndDate = new System.Windows.Forms.Label();
             this.labelEventStartDate = new System.Windows.Forms.Label();
-            this.buttonSave = new System.Windows.Forms.Button();
             this.buttonEdit = new System.Windows.Forms.Button();
             this.listViewEvents = new System.Windows.Forms.ListView();
             this.imageList = new System.Windows.Forms.ImageList(this.components);
             this.labelEventName = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.textBoxOrganization = new System.Windows.Forms.TextBox();
+            this.listBoxOrganizations = new System.Windows.Forms.ListBox();
+            this.buttonDeleteOrganization = new System.Windows.Forms.Button();
+            this.buttonEditOrganization = new System.Windows.Forms.Button();
+            this.buttonAddOrganization = new System.Windows.Forms.Button();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.tabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl
@@ -76,13 +79,10 @@
             this.tabPage1.Controls.Add(this.pictureBox);
             this.tabPage1.Controls.Add(this.buttonAdd);
             this.tabPage1.Controls.Add(this.buttonDedlete);
-            this.tabPage1.Controls.Add(this.textBoxSerach);
-            this.tabPage1.Controls.Add(this.labelSearch);
             this.tabPage1.Controls.Add(this.textBoxName);
             this.tabPage1.Controls.Add(this.labelEventOrganization);
             this.tabPage1.Controls.Add(this.labelEventEndDate);
             this.tabPage1.Controls.Add(this.labelEventStartDate);
-            this.tabPage1.Controls.Add(this.buttonSave);
             this.tabPage1.Controls.Add(this.buttonEdit);
             this.tabPage1.Controls.Add(this.listViewEvents);
             this.tabPage1.Controls.Add(this.labelEventName);
@@ -96,6 +96,7 @@
             // 
             // comboBoxOrganization
             // 
+            this.comboBoxOrganization.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxOrganization.FormattingEnabled = true;
             this.comboBoxOrganization.Items.AddRange(new object[] {
             "Football",
@@ -149,22 +150,7 @@
             this.buttonDedlete.TabIndex = 19;
             this.buttonDedlete.Text = "Delete";
             this.buttonDedlete.UseVisualStyleBackColor = true;
-            // 
-            // textBoxSerach
-            // 
-            this.textBoxSerach.Location = new System.Drawing.Point(647, 10);
-            this.textBoxSerach.Name = "textBoxSerach";
-            this.textBoxSerach.Size = new System.Drawing.Size(240, 23);
-            this.textBoxSerach.TabIndex = 18;
-            // 
-            // labelSearch
-            // 
-            this.labelSearch.AutoSize = true;
-            this.labelSearch.Location = new System.Drawing.Point(599, 13);
-            this.labelSearch.Name = "labelSearch";
-            this.labelSearch.Size = new System.Drawing.Size(42, 15);
-            this.labelSearch.TabIndex = 17;
-            this.labelSearch.Text = "Search";
+            this.buttonDedlete.Click += new System.EventHandler(this.ButtonDedlete_Click);
             // 
             // textBoxName
             // 
@@ -200,16 +186,6 @@
             this.labelEventStartDate.TabIndex = 8;
             this.labelEventStartDate.Text = "Start Date";
             // 
-            // buttonSave
-            // 
-            this.buttonSave.Location = new System.Drawing.Point(829, 120);
-            this.buttonSave.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(53, 20);
-            this.buttonSave.TabIndex = 7;
-            this.buttonSave.Text = "Save";
-            this.buttonSave.UseVisualStyleBackColor = true;
-            // 
             // buttonEdit
             // 
             this.buttonEdit.Location = new System.Drawing.Point(829, 86);
@@ -231,6 +207,7 @@
             this.listViewEvents.Size = new System.Drawing.Size(574, 386);
             this.listViewEvents.TabIndex = 4;
             this.listViewEvents.UseCompatibleStateImageBehavior = false;
+            this.listViewEvents.SelectedIndexChanged += new System.EventHandler(this.ListViewEvents_SelectedIndexChanged);
             // 
             // imageList
             // 
@@ -251,13 +228,64 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.textBoxOrganization);
+            this.tabPage2.Controls.Add(this.listBoxOrganizations);
+            this.tabPage2.Controls.Add(this.buttonDeleteOrganization);
+            this.tabPage2.Controls.Add(this.buttonEditOrganization);
+            this.tabPage2.Controls.Add(this.buttonAddOrganization);
             this.tabPage2.Location = new System.Drawing.Point(4, 24);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(898, 395);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.Text = "Organiaztions";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // textBoxOrganization
+            // 
+            this.textBoxOrganization.Location = new System.Drawing.Point(141, 67);
+            this.textBoxOrganization.Name = "textBoxOrganization";
+            this.textBoxOrganization.Size = new System.Drawing.Size(189, 23);
+            this.textBoxOrganization.TabIndex = 4;
+            // 
+            // listBoxOrganizations
+            // 
+            this.listBoxOrganizations.FormattingEnabled = true;
+            this.listBoxOrganizations.ItemHeight = 15;
+            this.listBoxOrganizations.Location = new System.Drawing.Point(144, 96);
+            this.listBoxOrganizations.Name = "listBoxOrganizations";
+            this.listBoxOrganizations.Size = new System.Drawing.Size(186, 199);
+            this.listBoxOrganizations.TabIndex = 3;
+            // 
+            // buttonDeleteOrganization
+            // 
+            this.buttonDeleteOrganization.Location = new System.Drawing.Point(32, 185);
+            this.buttonDeleteOrganization.Name = "buttonDeleteOrganization";
+            this.buttonDeleteOrganization.Size = new System.Drawing.Size(75, 23);
+            this.buttonDeleteOrganization.TabIndex = 2;
+            this.buttonDeleteOrganization.Text = "Delete";
+            this.buttonDeleteOrganization.UseVisualStyleBackColor = true;
+            this.buttonDeleteOrganization.Click += new System.EventHandler(this.ButtonDeleteOrganization_Click);
+            // 
+            // buttonEditOrganization
+            // 
+            this.buttonEditOrganization.Location = new System.Drawing.Point(32, 140);
+            this.buttonEditOrganization.Name = "buttonEditOrganization";
+            this.buttonEditOrganization.Size = new System.Drawing.Size(75, 23);
+            this.buttonEditOrganization.TabIndex = 1;
+            this.buttonEditOrganization.Text = "Edit";
+            this.buttonEditOrganization.UseVisualStyleBackColor = true;
+            this.buttonEditOrganization.Click += new System.EventHandler(this.ButtonEditOrganization_Click);
+            // 
+            // buttonAddOrganization
+            // 
+            this.buttonAddOrganization.Location = new System.Drawing.Point(32, 96);
+            this.buttonAddOrganization.Name = "buttonAddOrganization";
+            this.buttonAddOrganization.Size = new System.Drawing.Size(75, 23);
+            this.buttonAddOrganization.TabIndex = 0;
+            this.buttonAddOrganization.Text = "Add";
+            this.buttonAddOrganization.UseVisualStyleBackColor = true;
+            this.buttonAddOrganization.Click += new System.EventHandler(this.ButtonAddOrganization_Click);
             // 
             // openFileDialog
             // 
@@ -272,11 +300,13 @@
             this.Controls.Add(this.tabControl);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Sport Events";
             this.tabControl.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -290,18 +320,20 @@
         private ListView listViewEvents;
         private Label labelEventEndDate;
         private Label labelEventStartDate;
-        private Button buttonSave;
         private Button buttonEdit;
         private Label labelEventOrganization;
         private TextBox textBoxName;
         private Button buttonDedlete;
-        private TextBox textBoxSerach;
-        private Label labelSearch;
         private Button buttonAdd;
         private PictureBox pictureBox;
         private DateTimePicker dateTimePickerStart;
         private DateTimePicker dateTimePickerEnd;
         private ComboBox comboBoxOrganization;
         private OpenFileDialog openFileDialog;
+        private TextBox textBoxOrganization;
+        private ListBox listBoxOrganizations;
+        private Button buttonDeleteOrganization;
+        private Button buttonEditOrganization;
+        private Button buttonAddOrganization;
     }
 }
